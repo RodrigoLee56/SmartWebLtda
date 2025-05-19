@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Produtos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let produto of produtos">
+      <ion-thumbnail slot="start">
+        <img [src]="'http://192.168.0.157/api/'+produto.imagem" alt="{{ produto.nome }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ produto.nome }}</h2>
+        <p>{{ produto.descricao }}</p>
+        <p><strong>R$ {{ produto.preco }}</strong></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button
+    color="primary"
+    [routerLink]="['/cadastro-produto']"
+    (keydown.enter)="goToCadastroProduto()"
+    aria-label="Cadastrar novo produto"
+    tabindex="0">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+  <div style="display: flex; justify-content: space-between; padding: 10px;">
+    <ion-button expand="full" (click)="prevPage()">Anterior</ion-button>
+    <ion-button expand="full" (click)="nextPage()">Próximo</ion-button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastrar Produto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="produto.nome" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-textarea [(ngModel)]="produto.descricao"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Preço</ion-label>
+      <ion-input [(ngModel)]="produto.preco" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">ID do Usuário</ion-label>
+      <ion-input [(ngModel)]="produto.usuario_id" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Imagem</ion-label>
+      <input type="file" (change)="onFileChange($event)" accept="image/*" />
+    </ion-item>
+
+    <ion-button expand="full" (click)="cadastrar()">Cadastrar</ion-button>
+  </ion-list>
+</ion-content>
