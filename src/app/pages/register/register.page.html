@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Cadastrar Usuário</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="goToLogin()">
+      <ion-button (click)="goToLogin()" (keydown)="goToLogin()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -27,5 +27,5 @@
     </ion-item>
   </ion-list>
 
-  <ion-button expand="full" (click)="cadastrar()">Cadastrar</ion-button>
+  <ion-button expand="full" (click)="cadastrar()" (keydown)="cadastrar()">Cadastrar</ion-button>
 </ion-content>

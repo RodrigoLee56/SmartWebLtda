@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Produto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToHome()" (keydown.enter)="goToHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()" (keydown.enter)="logout()" color="danger" class="logout-button">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+    <form (ngSubmit)="salvar()">
+      <ion-item>
+        <ion-label position="floating">Nome do Produto</ion-label>
+        <ion-input type="text" [(ngModel)]="produto.nome" name="nome" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Preço</ion-label>
+        <ion-input type="number" [(ngModel)]="produto.preco" name="preco" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-textarea [(ngModel)]="produto.descricao" name="descricao"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">ID do Usuário</ion-label>
+        <ion-input type="number" [(ngModel)]="produto.usuario_id" name="usuario_id" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <input type="file" accept="image/*" (change)="onFileChange($event)" />
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!produto.nome || !produto.preco || !produto.usuario_id">
+        Salvar Alterações
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

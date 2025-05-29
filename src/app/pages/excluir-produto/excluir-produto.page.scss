@@ -1,0 +1,23 @@
+.excluir-container {
+  padding: 30px;
+  text-align: center;
+}
+
+ion-icon {
+  font-size: 60px;
+  color: var(--ion-color-danger);
+  margin-bottom: 20px;
+}
+
+ion-button {
+  --background: var(--ion-color-danger);
+  --background-hover: #e63946;
+  --border-radius: 8px;
+  margin-top: 20px;
+}
+
+ion-item {
+  --background: #fff;
+  --border-radius: 10px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}

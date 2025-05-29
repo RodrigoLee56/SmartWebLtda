@@ -1,0 +1,13 @@
+.logout-button {
+  --ion-color: #fff;
+  --background: var(--ion-color-danger);
+  --color: #fff;
+
+  ion-icon {
+    color: #fff;
+  }
+
+  &:active {
+    background: #c62828;
+  }
+}

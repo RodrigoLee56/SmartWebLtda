@@ -2,41 +2,52 @@
   <ion-toolbar>
     <ion-title>Produtos</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="goToHome()">
+      <ion-button (click)="goToHome()" (keydown.enter)="goToHome()">
         <ion-icon name="home"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()" (keydown.enter)="logout()" color="danger" class="logout-button">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list>
-    <ion-item *ngFor="let produto of produtos">
-      <ion-thumbnail slot="start">
-        <img [src]="'http://192.168.0.157/api/'+produto.imagem" alt="{{ produto.nome }}">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ produto.nome }}</h2>
-        <p>{{ produto.descricao }}</p>
-        <p><strong>R$ {{ produto.preco }}</strong></p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <div class="produtos-lista">
 
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button
-    color="primary"
-    [routerLink]="['/cadastro-produto']"
-    (keydown.enter)="goToCadastroProduto()"
-    aria-label="Cadastrar novo produto"
-    tabindex="0">
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+    <ion-list>
+      <ion-item *ngFor="let produto of produtos">
+        <ion-thumbnail slot="start">
+          <img [src]="'http://localhost/api/'+produto.imagem" alt="{{ produto.nome }}" />
+          <!-- <img [src]="'http://localhost/api/'+produto.imagem" alt="{{ produto.nome }}" /> -->
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ produto.nome }}</h2>
+          <p>{{ produto.descricao }}</p>
+          <p><strong>R$ {{ produto.preco }}</strong></p>
+        </ion-label>
 
-  <div style="display: flex; justify-content: space-between; padding: 10px;">
-    <ion-button expand="full" (click)="prevPage()">Anterior</ion-button>
-    <ion-button expand="full" (click)="nextPage()">Próximo</ion-button>
+        <ion-button slot="end" fill="outline" [routerLink]="['/editar-produto', produto.id]">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button slot="end" color="danger" fill="outline" (click)="excluir(produto.id)"
+          (keydown.enter)="excluir(produto.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="primary" [routerLink]="['/cadastro-produto']" (keydown.enter)="goToCadastroProduto()"
+        aria-label="Cadastrar novo produto" tabindex="0">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <div style="display: flex; justify-content: space-between; padding: 10px">
+      <ion-button expand="full" (click)="prevPage()" (keydown.enter)="prevPage()">Anterior</ion-button>
+      <ion-button expand="full" (click)="nextPage()" (keydown.enter)="nextPage()">Próximo</ion-button>
+    </div>
   </div>
-
 </ion-content>

@@ -1,0 +1,9 @@
+<ion-content class="ion-padding">
+  <div class="excluir-container">
+    <ion-icon name="alert-circle"></ion-icon>
+    <h2>Deseja excluir?</h2>
+    <p><strong>ID:</strong> {{ produto.id }}</p>
+    <p><strong>Nome:</strong> {{ produto.nome }}</p>
+    <ion-button expand="full" color="danger" (click)="excluir()" (keydown.enter)="excluir()">Confirmar Exclusão</ion-button>
+  </div>
+</ion-content>

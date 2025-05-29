@@ -1,3 +1,45 @@
 {
-  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular/standalone"]
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@ionic/angular/common",
+    "@ionic/angular/standalone"
+  ],
+  "cSpell.words": [
+    "Ainda",
+    "Alterações",
+    "atualizados",
+    "Botões",
+    "cadastrado",
+    "Cadastrar",
+    "cadastro",
+    "carregar",
+    "certeza",
+    "Confirmar",
+    "conta",
+    "descricao",
+    "Descrição",
+    "deseja",
+    "Editar",
+    "Entrar",
+    "Erro",
+    "Espaçamentos",
+    "excluído",
+    "excluir",
+    "Exclusão",
+    "Fontes",
+    "imagem",
+    "inválido",
+    "obrigatórios",
+    "página",
+    "possível",
+    "preco",
+    "principais",
+    "produto",
+    "produtos",
+    "Próximo",
+    "Resposta",
+    "salvar",
+    "serem",
+    "sucesso",
+    "usuario"
+  ]
 }

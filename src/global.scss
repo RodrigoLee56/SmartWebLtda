@@ -32,6 +32,28 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+// src/global.scss
+
+@import '~@ionic/angular/css/ionic.bundle.css';
+@import './theme/variables';
+
+body {
+  font-family: $font-family;
+}
+ion-content {
+  --background: #f5f5f5;
+}
+
+ion-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+ion-button {
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}

@@ -1,2 +1,28 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+// src/theme/variables.scss
+
+// Cores principais
+$primary: #3880ff;
+$secondary: #50c878;
+$tertiary: #ff6347;
+$success: #4caf50;
+$warning: #ff9800;
+$danger: #f44336;
+$dark: #222;
+
+// Fontes
+$font-family: 'Segoe UI', Roboto, sans-serif;
+$font-size-base: 16px;
+
+// Espaçamentos
+$spacer: 1rem;
+$border-radius: 8px;
+
+// Inputs
+$input-background: #f9f9f9;
+$input-border-color: #ddd;
+
+// Botões
+$button-border-radius: $border-radius;
+$card-border-radius: $border-radius;

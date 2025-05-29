@@ -8,6 +8,9 @@
       <ion-button (click)="goToHome()">
         <ion-icon name="home"></ion-icon>
       </ion-button>
+      <ion-button (click)="logout()" (keydown.enter)="logout()" color="danger" class="logout-button">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -35,7 +38,6 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Imagem</ion-label>
       <input type="file" (change)="onFileChange($event)" accept="image/*" />
     </ion-item>
 

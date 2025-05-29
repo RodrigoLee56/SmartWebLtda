@@ -25,6 +25,14 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'editar-produto/:id',
+    loadChildren: () => import('./pages/editar-produto-page/editar-produto.module').then(m => m.EditarProdutoModule)
+  },
+  {
+    path: 'excluir-produto',
+    loadChildren: () => import('./pages/excluir-produto/excluir-produto.module').then( m => m.ExcluirProdutoPageModule)
+  },
 
 ];
 

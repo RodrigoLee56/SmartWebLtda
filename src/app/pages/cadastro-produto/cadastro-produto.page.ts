@@ -51,4 +51,11 @@ export class CadastroProdutoPage {
   goToHome() {
     this.router.navigate(['/home']);
   }
+
+  logout() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+
+    this.router.navigate(['/login']);
+  }
 }

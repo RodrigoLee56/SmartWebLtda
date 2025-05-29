@@ -14,18 +14,18 @@ export class RegisterPage {
     email: '',
     senha: ''
   };
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private readonly apiService: ApiService, private readonly router: Router) { }
 
   cadastrar() {
-    this.apiService.register(this.usuario.nome, this.usuario.email, this.usuario.senha).subscribe(
-      (res: any) => {
+    this.apiService.register(this.usuario.nome, this.usuario.email, this.usuario.senha).subscribe({
+      next: (res: any) => {
         alert('Usuário cadastrado com sucesso!');
         this.router.navigate(['/login']);
       },
-      (err) => {
+      error: (err) => {
         alert('Erro ao cadastrar usuário');
       }
-    );
+    });
   }
 
   goToLogin(): void {
